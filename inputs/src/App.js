@@ -72,69 +72,69 @@ import './App.css';
 // }
 
 
-function App() {
+// function App() {
 
-const name = React.useRef();
-const lastName = React.useRef();
-const email = React.useRef();
-const age = React.useRef();
-const password = React.useRef();
-const form = React.useRef();
+// const name = React.useRef();
+// const lastName = React.useRef();
+// const email = React.useRef();
+// const age = React.useRef();
+// const password = React.useRef();
+// const form = React.useRef();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+//   const onSubmit = (e) => {
+//     e.preventDefault();
  
-//  name.current.value = '' // clear input
+// //  name.current.value = '' // clear input
 
 
 
- alert(JSON.stringify({
-   name: name.current.value, 
-   lastName: lastName.current.value, 
-   email: email.current.value, 
-   age: age.current.value, 
-   password: password.current.value
-  }, null, 2))
+//  alert(JSON.stringify({
+//    name: name.current.value, 
+//    lastName: lastName.current.value, 
+//    email: email.current.value, 
+//    age: age.current.value, 
+//    password: password.current.value
+//   }, null, 2))
 
-// name.current.value = '';
-// lastName.current.value = '';
-// email.current.value = '';
-// age.current.value = '';
-// password.current.value = '';
+// // name.current.value = '';
+// // lastName.current.value = '';
+// // email.current.value = '';
+// // age.current.value = '';
+// // password.current.value = '';
  
-form.current.reset()
-}
+// form.current.reset()
+// }
 
 
 
-  return (
-    <div className="App">
-      <h1>This is input</h1>
-      <form 
-      ref={form}
-      onSubmit = {onSubmit} >
-  <input ref={name} type="text" name="name" placeholder = "Enter your name"/>  
-    <br/>
-    <br/>
-    <input ref={lastName} type="text" name="lastName" placeholder = "Enter your last name"/>  
-    <br/>
-    <br/>
-    <input ref={email} type="email" name="email" placeholder = "Enter your email"/>  
-    <br/>
-    <br/>
-    <input ref={age} type="number" name="age" placeholder = "Enter your age"/> 
-    <br/>
-    <br/>
-    <input ref={password} type="password" name="password" placeholder = "Enter your pass"/>  
-    <br/>
-    <br/>
-    <button type="submit">Submit</button>
-      </form>
+//   return (
+//     <div className="App">
+//       <h1>This is input</h1>
+//       <form 
+//       ref={form}
+//       onSubmit = {onSubmit} >
+//   <input ref={name} type="text" name="name" placeholder = "Enter your name"/>  
+//     <br/>
+//     <br/>
+//     <input ref={lastName} type="text" name="lastName" placeholder = "Enter your last name"/>  
+//     <br/>
+//     <br/>
+//     <input ref={email} type="email" name="email" placeholder = "Enter your email"/>  
+//     <br/>
+//     <br/>
+//     <input ref={age} type="number" name="age" placeholder = "Enter your age"/> 
+//     <br/>
+//     <br/>
+//     <input ref={password} type="password" name="password" placeholder = "Enter your pass"/>  
+//     <br/>
+//     <br/>
+//     <button type="submit">Submit</button>
+//       </form>
   
     
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 
 function App() {

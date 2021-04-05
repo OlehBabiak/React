@@ -38,16 +38,21 @@ if (!endpointsData){
  return setErrorMessage('Enter data')
 };
 
-if (!AVAILABLE_RESOURCES.includes(endpointsData)) {
+if (!AVAILABLE_RESOURCES.includes(endpointsData.trim().toLowerCase())) { // враховує пробіли
  return setErrorMessage('Enter correct data')
 }
 
 // перевірка чи значення є числом
 // перевірка значення на діапазон 1-100
 const idToNum = Number(id)
-if (!idToNum && id !== '') {
+if (!idToNum && id !== '' && !idToNum !==0) {
+  return setErrorMessage('Enter correct id, use number 1-100')
+}
+
+if (idToNum < 0 || idToNum > 100) {
   return setErrorMessage('Enter correct id')
 }
+
 
   fetchData(
     setErrorMessage('')
@@ -56,7 +61,7 @@ if (!idToNum && id !== '') {
 
 
 const fetchData = async() => {
-  const response = await fetch(`${USER_LINK}/${endpointsData}/${id}`)
+  const response = await fetch(`${USER_LINK}/${endpointsData.trim().toLowerCase()}/${id.trim().toLowerCase()}`)
   const json = await response.json()
   console.log(json);
 if(id) {

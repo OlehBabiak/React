@@ -25,7 +25,7 @@ onSubmit}) {
     <input 
     value={id}
     onChange={({target: {value}}) => setId(value)} 
-    type="number" 
+    type="text" 
     name = "number"
     placeholder = "Enter number"
     /> 

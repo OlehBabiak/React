@@ -41,7 +41,7 @@ export default function App() {
             <Home />
           </Route>
           <Route path = "/test-route">
-            <Test_route/>
+            <TestRoute />
           </Route>
         </Switch> 
       </div>
@@ -60,6 +60,6 @@ function About() {
 function Users() {
   return <h2>Users</h2>;
 }
-function Test_route() {
+function TestRoute() {
   return <h2>Test route</h2>;
 }

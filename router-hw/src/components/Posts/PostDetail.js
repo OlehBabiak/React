@@ -1,30 +1,20 @@
 import React from 'react'
 import {
     useParams,
-    useRouteMatch,
-    useLocation,
     useHistory
 } from "react-router-dom";
 
 export default function PostDetail() {
     
-       const [post, setPost] = React.useState()
-
-       const match = useRouteMatch()
-       const {id} = useParams()
-       const history = useHistory() 
-       console.log({history});
-
-     
-       
-      
-
-const fetchData = async () => {
+    const [post, setPost] = React.useState()
+    const {id} = useParams()
+    const history = useHistory() 
+            
+    const fetchData = async () => {
     const resp = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
     const json = await resp.json()
     setPost(json)
         }
-
 
     React.useEffect(()=>{
         fetchData()

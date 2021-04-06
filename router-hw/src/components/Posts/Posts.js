@@ -6,13 +6,11 @@ import {
     Link,
     Redirect,
     useParams,
-    useRouteMatch,
 } from "react-router-dom";
 import PostDetail from './PostDetail';
 
 export default function Posts() {
     const [posts, setPosts] = React.useState([])
-const {id} = useParams()
 
 const fetchData = async () => {
     const resp = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -28,6 +26,7 @@ const fetchData = async () => {
     return (
         <div>
         <Switch>
+
           <Route path="/posts/:id">
             <PostDetail/>
           </Route>
@@ -37,12 +36,8 @@ const fetchData = async () => {
           </Route>
         
         </Switch> 
-
-
             <ul>
-                
-                {posts.map(el => <Link to={`/posts/${el.id}`}><li>{el.title} - {el.id}</li></Link>)}
-                            
+                {posts.map(el => <Link to={`/posts/${el.id}`}><li>{el.title} - {el.id}</li></Link>)}          
             </ul>
         </div>
     )

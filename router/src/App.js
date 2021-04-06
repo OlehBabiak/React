@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 export default function App() {
@@ -34,15 +35,27 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
+
+          < Route path = "/users" component={Users}/>  
+            
+          
+          <Route path="/" exact>
+            {Home}
           </Route>
-          <Route path="/">
-            <Home />
+
+          <Route path = "/test-route" render = {(args) => {// dвикористовуємо якщо на основі цих аргументів хочемо рендерити одне чи інше і прокидувати пропсами
+          console.log(args);
+          return <TestRoute/>
+          }}/>
+          
+          {/* <Route>
+            <h1>PAGE NOT FOUND</h1>
+          </Route> */}
+
+          <Route>
+            <Redirect to='/'/>
           </Route>
-          <Route path = "/test-route">
-            <TestRoute />
-          </Route>
+
         </Switch> 
       </div>
     </Router>

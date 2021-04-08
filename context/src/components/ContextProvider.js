@@ -1,8 +1,10 @@
 import React from 'react'
 import CounterContext from "./CounterContext";
+
+
 export default function ContextProvider({children}) {
     const [counter, setCounter] = React.useState(0)
-
+    console.log(children)
     const incCounter = () => {
         setCounter(counter +1)
     }

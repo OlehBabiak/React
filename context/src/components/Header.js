@@ -1,15 +1,12 @@
 import React, {createContext, useContext} from 'react'
-import ContextProvider from './ContextProvider'
+import CounterContext from "./CounterContext";
 
-const CounterContext = createContext()
+
 
 export default function Header() {
-   const countContext = useContext(CounterContext)
-
-console.log(countContext);
-
+   const {counter} = useContext(CounterContext)
 
     return (
-       <h1>Header counter:</h1>
+       <h1>Header counter:{counter}</h1>
     )
 }

@@ -1,4 +1,4 @@
-import React, {createContext, useContext} from 'react'
+import React from 'react'
 import CounterContext from "./CounterContext";
 export default function ContextProvider({children}) {
     const [counter, setCounter] = React.useState(0)

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import CounterContext from "./CounterContext";
+import ContextProvider from "./ContextProvider";
 
 
 

@@ -3,7 +3,7 @@ import React, {createContext} from 'react'
 
 const CounterContext = createContext()
 
-export default function ContextProvider({children}) {
+function ContextProvider({children}) {
     const [counter, setCounter] = React.useState(0)
     console.log(children)
     const incCounter = () => {
@@ -25,3 +25,5 @@ export default function ContextProvider({children}) {
             </CounterContext.Provider>
     )
 }
+
+export default ContextProvider

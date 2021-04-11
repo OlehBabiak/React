@@ -4,7 +4,7 @@ import TodoContext from "./TodoContext";
 
 const TodoItem = ({todo, index}) => {
 const {removeTodo, todoDone} = useContext(TodoContext)
-
+//
     return (
         <div className='todoItem'>
             <h4>{index}. {todo.title}</h4>

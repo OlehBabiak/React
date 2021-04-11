@@ -11,3 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header{
+  height: 50px;
+  background: lightskyblue;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+header a{
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 14px;
+}
+.body{
+  padding: 20px;
+}
+.todoItem{
+  border: 1px solid black;
+}
+
+.done{
+  text-decoration: line-through;
+}

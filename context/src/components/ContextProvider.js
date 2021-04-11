@@ -1,11 +1,10 @@
-import React, {createContext} from 'react'
-// import CounterContext from "./CounterContext";
+import React from 'react'
+import CounterContext from "./CounterContext";
 
-const CounterContext = createContext()
+
 
 function ContextProvider({children}) {
     const [counter, setCounter] = React.useState(0)
-    console.log(children)
     const incCounter = () => {
         setCounter(counter +1)
     }

@@ -3,7 +3,7 @@ import TodoContext from "./TodoContext";
 import { v4 as uuidv4 } from 'uuid'
 
 const AddTodo = () =>{
-    const {onTodoCreate, todoCounter} = useContext(TodoContext)
+    const {onTodoCreate} = useContext(TodoContext)
     const [todoValues, setTodoValues] = useState(
         {
             id: null,
@@ -23,7 +23,6 @@ const AddTodo = () =>{
                 complited: false
             }
         )
-        todoCounter()
     }
 
     return (

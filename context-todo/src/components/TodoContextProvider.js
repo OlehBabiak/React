@@ -3,15 +3,14 @@ import TodoContext from "./TodoContext";
 
 const TodoContextProvider = ({children}) =>{
     let [todos, setTodos] = useState([])
-    const [counter, setCounter] = useState(0)
+
     const [doneTodos, setDoneTodos] = useState([])
 
-    const todoCounter = () => {
-        setCounter(todos.length)
-    }
+
 
     const removeTodo = (id) => {
-        setTodos(todos.filter(todo => todo.id !=id))
+        setTodos(todos.filter(todo => todo.id !==id))
+        setDoneTodos(doneTodos.filter(el => el !== id))
     }
     const doneTodoCounter = (todoId) => {
         const isTodoMarkedAsDone = doneTodos.includes(todoId)
@@ -30,8 +29,6 @@ const TodoContextProvider = ({children}) =>{
         }))
     }
 
-
-
     const onTodoCreate = (newTodo) =>{
 if(!newTodo || !newTodo.title || !newTodo.description) {
     console.error('wrng arg for new todo, should be smth like {title: "...", description: "..."}')
@@ -43,12 +40,10 @@ setTodos([newTodo,...todos])
     return(
         <TodoContext.Provider value={{
         todos,
-            counter,
             doneTodos,
             onTodoCreate,
             removeTodo,
             isDoneToggle,
-            todoCounter,
             doneTodoCounter
         }
         }>

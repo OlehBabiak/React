@@ -1,5 +1,4 @@
-import React, {useContext} from "react";
-import TodoContext from "./TodoContext";
+import React from "react";
 
 
 const TodoItem = ({todo, index, removeTodo, isDoneToggle, doneTodoCounter}) => {
@@ -7,7 +6,7 @@ const TodoItem = ({todo, index, removeTodo, isDoneToggle, doneTodoCounter}) => {
     if(todo.complited){
         classes.push('done')
     }
-    console.log(classes)
+
 const onTodoDelete = () => {
     const answer = window.confirm('Are you sure?')
     if(answer){
@@ -16,7 +15,7 @@ const onTodoDelete = () => {
 }
    const onMarkIsDoneToggle = () =>{
 isDoneToggle(todo.id);
-doneTodoCounter(todo.id)
+       doneTodoCounter(todo.id)
    }
     return (
         <div className='todoItem'>
@@ -24,7 +23,7 @@ doneTodoCounter(todo.id)
             <h4>{index}. {todo.title}</h4>
             <p>{todo.description}</p>
             </div>
-            <button onClick={onMarkIsDoneToggle}>Mark is done</button>
+            <button onClick={onMarkIsDoneToggle}>Todo is {todo.complited? 'not': ''}  done</button>
             <button onClick={onTodoDelete}>Delete</button>
         </div>
     )

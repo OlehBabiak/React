@@ -1,7 +1,7 @@
-import React from "react";
+import React, {memo} from "react";
 
 
-const TodoItem = ({todo, index, removeTodo, isDoneToggle, doneTodoCounter}) => {
+const TodoItem = memo(({todo, index, removeTodo, isDoneToggle, doneTodoCounter}) => {
     const classes = []
     if(todo.complited){
         classes.push('done')
@@ -27,6 +27,6 @@ isDoneToggle(todo.id);
             <button onClick={onTodoDelete}>Delete</button>
         </div>
     )
-}
+})
 
 export default TodoItem

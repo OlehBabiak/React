@@ -3,7 +3,7 @@ import {
     INC_CUSTOM_TWO,
     DEC_TWO,
     RES_TWO
-} from '../action-types'
+} from '../action-types/index'
 
 const initialState = {
     counter: 0

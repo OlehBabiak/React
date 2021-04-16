@@ -4,20 +4,35 @@ import {
     incAction,
     incCustom,
     incDec,
-    incRes
+    incRes,
+    incAction_two,
+    incCustom_two,
+    incDec_two,
+    incRes_two
 } from '../redux/action-creators'
 const Counter = () => {
-    const counter = useSelector(({counter})=> counter)
+    const {counter1, counter2} = useSelector(({counter1, counter2})=> ({
+        counter1: counter1.counter,
+        counter2: counter2.counter
+    }))
+
     const dispatch = useDispatch()
 
     //В payload можем класти масив елементів які берем з сервера
     return (
         <>
-            <h1>{counter}</h1>
+            <h1>{counter1}</h1>
             <button onClick={()=> dispatch(incAction())}>INC</button>
             <button onClick={()=> dispatch(incCustom(102))}>INC CUSTOM</button>
             <button onClick={()=> dispatch(incDec())}>DEC</button>
             <button onClick={()=> dispatch(incRes())}>RESET</button>
+            <br/>
+            <br/>
+            <h1>{counter2}</h1>
+            <button onClick={()=> dispatch(incAction_two())}>INC_TWO</button>
+            <button onClick={()=> dispatch(incCustom_two(102))}>INC CUSTOM_TWO</button>
+            <button onClick={()=> dispatch(incDec_two())}>DEC_TWO</button>
+            <button onClick={()=> dispatch(incRes_two())}>RESET_TWO</button>
         </>
     )
 }

@@ -7,8 +7,9 @@ import {
     INC_CUSTOM_TWO,
     DEC_TWO,
     RES_TWO,
-} from '../action-types'
+} from '../action-types/index'
 
+console.log('step1', INC)
 const incAction = () => ({type: INC})
 const incCustom = (payload) => ({type: INC_CUSTOM, payload})
 const incDec = () => ({type: DEC})

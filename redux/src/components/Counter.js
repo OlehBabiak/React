@@ -11,7 +11,7 @@ import {
     incRes_two
 } from '../redux/action-creators'
 
-console.log('step2', incAction())
+
 const Counter = () => {
     const {counter1, counter2} = useSelector(({counter1, counter2})=> ({
         counter1: counter1.counter,
@@ -40,3 +40,5 @@ const Counter = () => {
 }
 
 export default Counter
+
+

@@ -36,9 +36,8 @@ const reducer = (state = initialState, action) => {
             }
         }
         default:
-            console.log('action', action.type, 'does no exist')
             return state
     }
 }
 
-export default  reducer()
+export default  reducer

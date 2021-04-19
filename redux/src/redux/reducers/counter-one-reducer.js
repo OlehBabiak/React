@@ -10,7 +10,6 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    console.log(action)
     switch (action.type) {
         case INC: {
             return {
@@ -37,8 +36,7 @@ const reducer = (state = initialState, action) => {
             }
         }
         default:
-            console.log('action', action.type, 'does no exist')
             return state
     }
 }
-export default reducer()
+export default reducer
